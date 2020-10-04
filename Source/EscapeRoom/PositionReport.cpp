@@ -18,8 +18,10 @@ UPositionReport::UPositionReport()
 void UPositionReport::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// ...
+	FString ObjectName = GetOwner()->GetName();
+	FVector ObjectPos = GetOwner()->GetTransform().GetLocation();
+	UE_LOG(LogTemp, Warning, TEXT("%s is at X = %f Y = %f Z = %f"), *ObjectName, ObjectPos.X, ObjectPos.Y, ObjectPos.Z);
+	
 	
 }
 
